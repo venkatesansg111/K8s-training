@@ -163,16 +163,26 @@ kubectl explain ReplicaSet.spec.selector
 
 > Manages ReplicaSet + supports rollout strategies (update, rollback, history)
 
+### Key Spec Components
+
+1. `replicas`
+2. `selector`
+3. `template`
+4. `strategy`
+
 ### ✨ Deployment Capabilities
 
 - Auto-creates ReplicaSet
 - Rollout status, undo, history
 - Strategy types: `RollingUpdate` (default), `Recreate`, `Blue/Green`, `Canary`
+  
 
 ```bash
 kubectl api-resources | grep -iE "KIND|deploy"
 kubectl create deployment nginx-deploy --image=nginx --dry-run=client -o yaml > nginx-deployment.yaml
 ```
+
+
 
 ### Deployment YAML Example
 
